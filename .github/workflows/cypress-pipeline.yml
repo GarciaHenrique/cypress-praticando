@@ -19,10 +19,6 @@ jobs:
       # clone do projeto
       - name: Checkout/Clone do projeto
         uses: actions/checkout@v4
-      
-      # instalar dependências do projeto
-      - name: Instalar dependências
-        uses: npm install
 
       # execução e configuração do projeto
       - name: Cypress run
