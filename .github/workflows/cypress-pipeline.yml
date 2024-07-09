@@ -22,7 +22,7 @@ jobs:
       
       # instalar dependências do projeto
       - name: Instalar dependências
-        uses: npm install -y
+        uses: npm install
 
       # execução e configuração do projeto
       - name: Cypress run
