@@ -1,0 +1,36 @@
+# nome da pipeline
+name: Run Basic Tests - Scheduler
+
+# em que momento será executada
+on:
+  schedule:
+    - cron: '0 20-22 * * 1-5'
+
+  #o que vai ser feito nessa pipeline
+  #só teremos um job: rodar os testes
+jobs:
+  cypress-run:
+    # máquina que será executado
+    runs-on: ubuntu-latest
+
+    # passo a passo para rodar os testes
+    # actions do github
+    steps:
+      # clone do projeto
+      - name: Checkout/Clone do projeto
+        uses: actions/checkout@v4
+
+      # execução e configuração do projeto
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+        
+      # upload do relatório do mocha agora vai pfvr
+      - name: Upload relatório
+        uses: actions/upload-artifact@v4
+        with:
+          name: Relatório
+          path: cypress\reports\html
