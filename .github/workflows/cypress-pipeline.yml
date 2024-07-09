@@ -19,10 +19,6 @@ jobs:
       # clone do projeto
       - name: Checkout/Clone do projeto
         uses: actions/checkout@v4
-      
-      # instalar dependências do projeto
-      - name: Instalar dependências
-        uses: npm install -y
 
       # execução e configuração do projeto
       - name: Cypress run
@@ -32,7 +28,7 @@ jobs:
         env:
           CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
         
-      # upload do relatório ddo mocha
+      # upload do relatório do mocha agora vai pfvr
       - name: Upload relatório
         uses: actions/upload-artifact@v4
         with:
