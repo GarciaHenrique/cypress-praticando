@@ -4,7 +4,7 @@ name: Run Basic Tests - Scheduler
 # em que momento será executada
 on:
   schedule:
-    - cron: '10 14 * * *'
+    - cron: '12 14 * * *'
 
   #o que vai ser feito nessa pipeline
   #só teremos um job: rodar os testes
