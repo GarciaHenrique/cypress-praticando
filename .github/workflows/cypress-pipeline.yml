@@ -8,22 +8,22 @@ on:
 
   #o que vai ser feito nessa pipeline
   #só teremos um job: rodar os testes
-  jobs:
-    cypress-run:
-      # máquina que será executado
-      runs-on: ubuntu-latest
+jobs:
+  cypress-run:
+    # máquina que será executado
+    runs-on: ubuntu-latest
 
-      # passo a passo para rodar os testes
-      # actions do github
-      steps:
-        # clone do projeto
-        - name: Checkout/Clone do projeto
-          uses: actions/checkout@v4
+    # passo a passo para rodar os testes
+    # actions do github
+    steps:
+      # clone do projeto
+      - name: Checkout/Clone do projeto
+        uses: actions/checkout@v4
 
-        # execução e configuração do projeto
-        - name: Cypress run
-          uses: cypress-io/github-action@v6
-          with:
-            record: true
-          env:
-            CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
+      # execução e configuração do projeto
+      - name: Cypress run
+        uses: cypress-io/github-action@v6
+        with:
+          record: true
+        env:
+          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
