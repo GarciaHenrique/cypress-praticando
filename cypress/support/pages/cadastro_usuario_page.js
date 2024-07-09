@@ -4,7 +4,7 @@ const elements = {
     fields: {
         name: '#user',
         email: '#email',
-        password: '#password'
+        password: '#passwordX'
     },
     buttons: {
         register: '#btnRegister',
